@@ -17,7 +17,7 @@
 
 ## 📖 Overview
 
-**AI-Resume** is a modern, full-stack application designed to help job seekers tailor their resumes and prepare for interviews. By simply uploading a PDF resume and pasting a target Job Description, users receive deep AI-driven insights—including skill gap analysis, a match score, and potential interview questions.
+**AI-Resume** is a modern, full-stack application designed to help job seekers tailor their resumes and prepare for interviews. By simply uploading a PDF resume and pasting a target Job Description, users receive deep AI-driven insights-including skill gap analysis, a match score, and potential interview questions.
 
 Beyond analysis, the application features a **Real-Time Interactive AI Mock Interviewer** that acts as a hiring manager, evaluating answers and asking dynamic follow-up questions based on the candidate's specific background.
 
@@ -76,7 +76,7 @@ Follow these instructions to set up the project locally.
 
 This project leverages the **native multi-modal capabilities** of the Gemini API. 
 
-1. **PDF Handling:** Instead of parsing text via external libraries—which can struggle with complex layouts or crash in serverless environments—the PDF is converted directly to a Base64 string.
+1. **PDF Handling:** Instead of parsing text via external libraries-which can struggle with complex layouts or crash in serverless environments-the PDF is converted directly to a Base64 string.
 2. **Contextual Analysis:** The raw PDF and Job Description are sent as a multi-modal prompt to Gemini, allowing the model to accurately assess layout, context, and content.
 3. **Mock Interviews:** System prompts dynamically generate interview questions, and chat history is preserved to enable natural follow-up questions.
 
