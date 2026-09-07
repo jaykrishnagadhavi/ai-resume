@@ -25,11 +25,14 @@ export default function MockInterview({ context }: MockInterviewProps) {
   }, []);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Only scroll automatically if the user is actively chatting (prevents jumping down the page on load)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const startInterview = async () => {

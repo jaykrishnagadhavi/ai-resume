@@ -36,11 +36,19 @@ export default function UploadForm({ onAnalyze, isLoading }: UploadFormProps) {
           <div className="flex items-center justify-center w-full">
             <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-indigo-400/30 border-dashed rounded-xl cursor-pointer bg-indigo-900/20 hover:bg-indigo-900/40 transition-all">
               <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg className="w-8 h-8 mb-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                <svg className={`w-8 h-8 mb-3 ${file ? 'text-green-400' : 'text-indigo-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  {file ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                  )}
                 </svg>
                 <p className="mb-2 text-sm text-gray-300">
-                  <span className="font-semibold">Click to upload</span> or drag and drop
+                  {file ? (
+                    <span className="font-semibold text-green-400">Resume Uploaded!</span>
+                  ) : (
+                    <><span className="font-semibold">Click to upload</span> or drag and drop</>
+                  )}
                 </p>
                 <p className="text-xs text-gray-400">{file ? file.name : "PDF (Max 5MB)"}</p>
               </div>
